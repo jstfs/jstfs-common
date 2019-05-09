@@ -7,21 +7,12 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 @SuppressWarnings({"unchecked", "rawtypes"})
-public final class ArrayUtils {
+public final class MyArrayUtils extends ArrayUtils {
 
-	// TODO 应该要移到CollectionUtils中
-	public static int[] toIntArray(Collection coll) {
-		Iterator iter = coll.iterator();
-		int[] arr = new int[coll.size()];
-		int i = 0;
-		while(iter.hasNext()) {
-			arr[i++] = ((Integer) iter.next()).intValue();
-		}
-		return arr;
-	}
-
-	private ArrayUtils() {
+	private MyArrayUtils() {
 	}
 
 	public static String toString(Object[] array) {
@@ -33,6 +24,7 @@ public final class ArrayUtils {
 				sb.append(",");
 			}
 		}
+		
 		sb.append("]");
 		return sb.toString();
 	}
