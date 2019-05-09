@@ -103,7 +103,7 @@ public final class MyArrayUtils extends ArrayUtils {
 	/**
 	 * 返回子数组
 	 */
-	public static Object[] subArray(Object[] source, int begin, int length) {
+	public static Object[] subArrayWithLength(Object[] source, int begin, int length) {
 		Object[] result = new Object[length];
 		for(int i = 0; i < length; i++) {
 			result[i] = source[begin + i];
@@ -114,10 +114,24 @@ public final class MyArrayUtils extends ArrayUtils {
 	/**
 	 * 返回子数组
 	 */
-	public static int[] subIntArray(int[] source, int begin, int length) {
+	public static int[] subIntArrayWithLength(int[] source, int begin, int length) {
 		int[] result = new int[length];
 		for(int i = 0; i < length; i++) {
 			result[i] = source[begin + i];
+		}
+		return result;
+	}
+	
+	/**
+	 * 返回子数组
+	 */
+	public static int[] subIntArray(int[] source, int begin, int end) {
+		if(begin == end) {
+			return new int[] {source[begin]};
+		}
+		int[] result = new int[end - begin + 1];
+		for(int i = 0; begin <= end; i++, begin++) {
+			result[i] = source[begin];
 		}
 		return result;
 	}
@@ -252,42 +266,42 @@ public final class MyArrayUtils extends ArrayUtils {
 		return true;
 	}
 
-	public static <T> boolean isEmpty(int[] ary) {
+	public static boolean isEmpty(int[] ary) {
 		if(ary == null || ary.length == 0) {
 			return true;
 		}
 		return false;
 	}
 
-	public static <T> boolean isEmpty(long[] ary) {
+	public static boolean isEmpty(long[] ary) {
 		if(ary == null || ary.length == 0){
 			return true;
 		}
 		return false;
 	}
 
-	public static <T> boolean isEmpty(float[] ary) {
+	public static boolean isEmpty(float[] ary) {
 		if(ary == null || ary.length == 0){
 			return true;
 		}
 		return false;
 	}
 
-	public static <T> boolean isEmpty(double[] ary) {
+	public static boolean isEmpty(double[] ary) {
 		if(ary == null || ary.length == 0){
 			return true;
 		}
 		return false;
 	}
 
-	public static <T> boolean isEmpty(boolean[] ary) {
+	public static boolean isEmpty(boolean[] ary) {
 		if(ary == null || ary.length == 0){
 			return true;
 		}
 		return false;
 	}
 
-	public static <T> boolean isEmpty(Object[] ary) {
+	public static boolean isEmpty(Object[] ary) {
 		if(ary == null || ary.length == 0){
 			return true;
 		}
