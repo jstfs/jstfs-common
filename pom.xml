@@ -8,9 +8,15 @@
 	<name>jstfs-common</name>
 
 	<parent>
-		<artifactId>jstfs-pom</artifactId>
 		<groupId>com.jstfs</groupId>
+		<artifactId>jstfs-pom</artifactId>
 		<version>1.0.0</version>
 	</parent>
 	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		</dependency>
+	</dependencies>
 </project>
