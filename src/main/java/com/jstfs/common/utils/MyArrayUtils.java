@@ -12,8 +12,7 @@ import org.apache.commons.lang3.ArrayUtils;
 @SuppressWarnings({"unchecked", "rawtypes"})
 public final class MyArrayUtils extends ArrayUtils {
 
-	private MyArrayUtils() {
-	}
+	private MyArrayUtils() {}
 
 	public static String toString(Object[] array) {
 		StringBuffer sb = new StringBuffer();
