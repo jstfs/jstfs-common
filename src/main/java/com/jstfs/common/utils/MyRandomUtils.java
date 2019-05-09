@@ -3,7 +3,7 @@ package com.jstfs.common.utils;
 import java.util.Arrays;
 import java.util.Random;
 
-public class RandomUtils {
+public class MyRandomUtils extends org.apache.commons.lang3.RandomUtils {
 	private static Random ran = new Random(47);
 	
 	public static void main(String[] args) {
