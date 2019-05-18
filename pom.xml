@@ -2,7 +2,6 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>jstfs-common</artifactId>
-	<packaging>jar</packaging>
 	<name>jstfs-common</name>
 
 	<parent>
