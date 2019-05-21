@@ -92,4 +92,11 @@ public class MyRandomUtils extends org.apache.commons.lang3.RandomUtils {
 	public static Integer nextInteger(int max) {
 		return ran.nextInt(max) + 1;
 	}
+	
+	/**
+	 * 重新设置种子
+	 */
+	public static void setSeed(long newSeed) {
+		ran.setSeed(newSeed);
+	}
 }
