@@ -8,6 +8,7 @@
 		<groupId>com.jstfs</groupId>
 		<artifactId>jstfs-pom</artifactId> 
 		<version>1.0.0</version>
+		<relativePath>../jstfs-pom/pom.xml</relativePath>
 	</parent>
 	
 </project>
