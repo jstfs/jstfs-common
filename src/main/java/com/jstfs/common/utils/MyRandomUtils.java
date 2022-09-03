@@ -127,6 +127,10 @@ public class MyRandomUtils extends org.apache.commons.lang3.RandomUtils {
 		return ran.nextInt(max) + 1;
 	}
 	
+	public static Integer nextInteger(int min, int max) {
+		return ran.nextInt(max) + min;
+	}
+	
 	/**
 	 * 重新设置种子
 	 */
