@@ -1,14 +1,9 @@
 package com.jstfs.common.utils;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class MyRandomUtils extends org.apache.commons.lang3.RandomUtils {
 	private static Random ran = new Random(47);
-	
-	public static void main(String[] args) {
-		System.out.println(Arrays.toString(generatePhoneNo(30, 11)));
-	}
 	
 	/**
 	 * 生成一个指定大小的int数组,最小值为1,最大值为size
@@ -26,12 +21,6 @@ public class MyRandomUtils extends org.apache.commons.lang3.RandomUtils {
 		return ary;
 	}
 	
-	/**
-	 * 
-	 * 
-	 * 最小值: 1
-	 * 最大值: size
-	 */
 	/**
 	 * 生成一个指定大小的int数组,最小值为1,最大值可以指定
 	 * 
@@ -59,11 +48,7 @@ public class MyRandomUtils extends org.apache.commons.lang3.RandomUtils {
 	public static int[] generateIntAry(int size, int min, int max) {
 		int[] ary = new int[size];
 		for (int i = 0; i < size; i++) {
-			int r = 0;
-			do {
-				r = nextInteger(max);
-			} while(r < min);
-			ary[i] = r;
+			ary[i] = nextInteger(min, max);
 		}
 		return ary;
 	}
@@ -124,13 +109,23 @@ public class MyRandomUtils extends org.apache.commons.lang3.RandomUtils {
 	 * @param max	最大值	
 	 */
 	public static Integer nextInteger(int max) {
-		return ran.nextInt(max) + 1;
+		return nextInteger(1, max);
 	}
 	
+	/**
+	 * 生成一个[min, max]之间的整数
+	 * 
+	 * @param min	最小值
+	 * @param max	最大值
+	 */
 	public static Integer nextInteger(int min, int max) {
-		return ran.nextInt(max) + min;
+		if(min > max) {
+			throw new RuntimeException("min必须大于等于max");
+		}
+		
+		return ran.nextInt(max) %(max - min + 1) + min;
 	}
-	
+
 	/**
 	 * 重新设置种子
 	 */
