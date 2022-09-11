@@ -12,7 +12,7 @@ public class MyCollectionUtils extends CollectionUtils {
 	/**
 	 * 将Integer的集合转为int数组 (List<Integer>.toArray()方法只能转为Integer数组)
 	 */
-	public static int[] intListToAry(List<Integer> ary) {
+	public static int[] toArray(List<Integer> ary) {
 		Integer[] tempAry = new Integer[ary.size()];
 		ary.toArray(tempAry);
 		int[] result = new int[ary.size()];
