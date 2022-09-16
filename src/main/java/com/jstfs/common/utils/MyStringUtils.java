@@ -9,4 +9,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class MyStringUtils extends StringUtils {
 
+	public static boolean isNotEmpty(CharSequence cs) {
+		return !isEmpty(cs);
+	}
 }
