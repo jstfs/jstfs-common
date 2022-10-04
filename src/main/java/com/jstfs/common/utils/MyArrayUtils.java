@@ -1,5 +1,8 @@
 package com.jstfs.common.utils;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.commons.lang3.ArrayUtils;
 
 public final class MyArrayUtils extends ArrayUtils {
@@ -44,5 +47,12 @@ public final class MyArrayUtils extends ArrayUtils {
 			result[i] = source[begin];
 		}
 		return result;
+	}
+	
+	/**
+	 * 仅仅是将数组转List的方法整合在工具类
+	 */
+	public static <T> List<T> toList(T[] a) {
+		return Arrays.asList(a);
 	}
 }
