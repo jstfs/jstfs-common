@@ -1,6 +1,9 @@
 package com.jstfs.common.utils;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.collections.CollectionUtils;
 
@@ -22,5 +25,19 @@ public class MyCollectionUtils extends CollectionUtils {
 			result[index++] = i;
 		}
 		return result;
+	}
+	
+	/**
+	 * 创建一个指定元素类型的List
+	 */
+	public static <E> List<E> newList(Class<E> e) {
+		return new ArrayList<E>();
+	}
+	
+	/**
+	 * 创建一个指定<K, V>的Map
+	 */
+	public static <K, V> Map<K, V> newMap(Class<K> k, Class<V> v) {
+		return new HashMap<K, V>();
 	}
 }
