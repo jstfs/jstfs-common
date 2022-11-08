@@ -35,6 +35,18 @@ public class MyCollectionUtils extends CollectionUtils {
 	}
 	
 	/**
+	 * 创建一个指定元素类型的List
+	 */
+	@SuppressWarnings("unchecked")
+	public static <E> List<E> newList(Class<E> e, E... eleAry) {
+		ArrayList<E> list = new ArrayList<E>();
+		for(E ele : eleAry) {
+			list.add(ele);
+		}
+		return list;
+	}
+	
+	/**
 	 * 创建一个指定<K, V>的Map
 	 */
 	public static <K, V> Map<K, V> newMap(Class<K> k, Class<V> v) {
