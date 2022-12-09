@@ -55,4 +55,15 @@ public final class MyArrayUtils extends ArrayUtils {
 	public static <T> List<T> toList(T[] a) {
 		return Arrays.asList(a);
 	}
+	
+	/**
+	 * 整型数组转Object数组
+	 */
+	public static Object[] toObjectAry(int[] intAry) {
+		Object[] objAry = new Object[intAry.length];
+		for(int i = 0; i < intAry.length; i++) {
+			objAry[i] = intAry[i];
+		}
+		return objAry;
+	}
 }
